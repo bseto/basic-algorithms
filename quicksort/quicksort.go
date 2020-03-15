@@ -22,15 +22,15 @@ func Quicksort(unsortedSlice []int64, low, high int64) []int64 {
 // where the pivot starts at the last (rightmost) element
 func Partition(unsortedSlice []int64, low, high int64) int64 {
 	pivot := unsortedSlice[high]
-	largerNumberIndex := low
+	splitindex := low
 
-	for cursor := low; cursor <= high; cursor++ {
-		if unsortedSlice[cursor] <= pivot {
-			swap(&unsortedSlice[cursor], &unsortedSlice[largerNumberIndex])
-			largerNumberIndex++
+	for cursor := low; cursor < high; cursor++ {
+		if unsortedSlice[cursor] < pivot {
+			swap(&unsortedSlice[cursor], &unsortedSlice[splitindex])
+			splitindex++
 		}
 	}
-	swap(&unsortedSlice[largerNumberIndex], &unsortedSlice[high])
+	swap(&unsortedSlice[splitindex], &unsortedSlice[high])
 
-	return largerNumberIndex
+	return splitindex
 }
