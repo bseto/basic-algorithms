@@ -10,7 +10,7 @@ import (
 )
 
 func TestBubbleSort(t *testing.T) {
-	b, err := ioutil.ReadFile(filepath.Join("..", "randomslice.txt"))
+	b, err := ioutil.ReadFile(filepath.Join("..", "testSlices", "10000.txt"))
 	if err != nil {
 		t.Fatalf("unable to read the file: %v", err)
 	}

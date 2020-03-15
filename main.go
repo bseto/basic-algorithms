@@ -9,7 +9,7 @@ import (
 
 func main() {
 	var b []byte
-	randomizedSliceSize := 10000
+	randomizedSliceSize := 10000000
 	//b = randomNumberInserts(randomizedSliceSize)
 	b = arrayScrambler(randomizedSliceSize)
 
