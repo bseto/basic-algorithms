@@ -9,13 +9,13 @@ import (
 
 func main() {
 	var b []byte
-	randomizedSliceSize := 1000000
+	randomizedSliceSize := 10000
 	//b = randomNumberInserts(randomizedSliceSize)
 	b = arrayScrambler(randomizedSliceSize)
 
 	err := ioutil.WriteFile("randomslice.txt", b, 0644)
 	if err != nil {
-		fmt.Printf("unable to write to file: %v\n", err)
+		fmt.Errorf("unable to write to file: %v", err)
 	}
 }
 
@@ -41,7 +41,7 @@ func arrayScrambler(randomizedSliceSize int) []byte {
 
 	b, err := json.Marshal(&randomizedSlice)
 	if err != nil {
-		fmt.Printf("unable to marshal json: %v\n", err)
+		fmt.Errorf("unable to marshal json: %v", err)
 	}
 	return b
 }
